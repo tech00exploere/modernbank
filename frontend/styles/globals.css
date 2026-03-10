@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --ui-text: #102a43;
+  --ui-muted: #1f3a5f;
+  --ui-border: #1e3a8a;
+  --ui-cream: #fff7e6;
+  --ui-cream-soft: #fff3d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  color: var(--ui-text);
+  background: var(--ui-cream-soft);
+}
+
+p,
+span,
+label,
+input,
+button,
+a,
+li,
+td,
+th {
+  font-weight: 600;
+}
+
+.text-ink {
+  color: var(--ui-text) !important;
+}
+
+.text-slate {
+  color: var(--ui-muted) !important;
+}
+
+.bg-white {
+  background-color: var(--ui-cream) !important;
+}
+
+.bg-white\/70 {
+  background-color: rgba(255, 247, 230, 0.92) !important;
+}
+
+.bg-sand {
+  background-color: var(--ui-cream-soft) !important;
+}
+
+.bg-sand\/40 {
+  background-color: rgba(255, 243, 214, 0.4) !important;
+}
+
+.bg-sand\/50 {
+  background-color: rgba(255, 243, 214, 0.5) !important;
+}
+
+.bg-sand\/60 {
+  background-color: rgba(255, 243, 214, 0.6) !important;
+}
+
+.bg-sand\/70 {
+  background-color: rgba(255, 243, 214, 0.7) !important;
+}
+
+.border-r {
+  border-right-color: rgba(30, 58, 138, 0.45) !important;
+}
+
+.border-ink\/10,
+.border-ink\/20 {
+  border-color: rgba(30, 58, 138, 0.45) !important;
+}
+
+.bg-ink {
+  background-color: #1e3a8a !important;
+}
+
+.bg-ink\/5 {
+  background-color: rgba(30, 58, 138, 0.05) !important;
+}
+
+.text-ink\/80 {
+  color: rgba(16, 42, 67, 0.8) !important;
+}
+
+.text-sand {
+  color: #fff7e6 !important;
+}
+
+.text-sand\/60 {
+  color: rgba(255, 247, 230, 0.6) !important;
+}
+
+.text-sand\/70 {
+  color: rgba(255, 247, 230, 0.7) !important;
+}
+
+.text-sand\/80 {
+  color: rgba(255, 247, 230, 0.8) !important;
+}
+
+.bg-brass {
+  background-color: #f3d28a !important;
+}
+
+.bg-brass.text-ink {
+  color: #102a43 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6f829c;
+  opacity: 0.75;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  color: var(--ui-text);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0.45;
+}
+
+.grain {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.section {
+  @apply mx-auto w-full max-w-6xl px-6;
+}
+
+.glass {
+  background: rgba(255, 247, 230, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 58, 138, 0.28);
+}
+
+
+
+
