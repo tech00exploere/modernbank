@@ -6,14 +6,24 @@ import { useState } from "react";
 
 export default function LoginPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
+const searchParams = useSearchParams();
+const [oauthError, setOauthError] = useState(null);
+const [oauthStatus, setOauthStatus] = useState(null);
+
+useEffect(() => {
+  if (searchParams) {
+    setOauthError(searchParams.get("error"));
+    setOauthStatus(searchParams.get("status"));
+  }
+}, [searchParams]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
-  const oauthError = searchParams.get("error");
-  const oauthStatus = searchParams.get("status");
+  // const oauthError = searchParams.get("error");
+  // const oauthStatus = searchParams.get("status");
 
   const oauthErrorMessage = (() => {
     if (!oauthError) {
