@@ -1,3 +1,5 @@
+"use client";
+
 import ProtectedRoute from "../../../components/ProtectedRoute";
 
 const tasks = [
@@ -25,20 +27,26 @@ export default function AdminPage() {
             </div>
           ))}
         </div>
+
         <div className="rounded-2xl border border-ink/10 bg-white p-6 text-ink">
           <p className="text-xs uppercase tracking-[0.3em] text-slate">
             Risk signals
           </p>
+
           <p className="mt-3 text-sm text-slate">
             3 flagged accounts, 2 unusual transfers, 1 loan escalation.
           </p>
+
           <div className="mt-6 space-y-3 text-sm">
             {[
               "Account AB-7721 (velocity)",
               "Account AB-2190 (geo mismatch)",
               "Transfer TXN-1022 (pending)",
             ].map((signal) => (
-              <div key={signal} className="rounded-xl bg-sand/60 px-3 py-2 text-slate">
+              <div
+                key={signal}
+                className="rounded-xl bg-sand/60 px-3 py-2 text-slate"
+              >
                 {signal}
               </div>
             ))}
