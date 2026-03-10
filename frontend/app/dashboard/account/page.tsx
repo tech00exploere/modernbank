@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ProtectedRoute from "../../../components/ProtectedRoute";
-import { getMe, updateMe, AccountUser } from "../../../lib/api";
+import { getMe, updateMe } from "../../../lib/api";
 import { formatINR } from "../../../lib/utils";
 
 export default function AccountPage() {
   const router = useRouter();
-  const [user, setUser] = useState<AccountUser | null>(null);
+
+  const [user, setUser] = useState(null);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [governmentId, setGovernmentId] = useState("");
@@ -20,10 +21,11 @@ export default function AccountPage() {
       try {
         const me = await getMe();
         setUser(me);
-        setName(me.name || "");
-        setPhone(me.phone || "");
-        setGovernmentId(me.governmentId || "");
-      } catch {
+        setName(me?.name || "");
+        setPhone(me?.phone || "");
+        setGovernmentId(me?.governmentId || "");
+      } catch (error) {
+        console.error(error);
         router.push("/login");
       }
     };
@@ -31,7 +33,7 @@ export default function AccountPage() {
     load();
   }, [router]);
 
-  const handleUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleUpdate = async (event) => {
     event.preventDefault();
 
     if (!user || saving) {
@@ -47,10 +49,11 @@ export default function AccountPage() {
         phone,
         governmentId,
       });
+
       setUser(updated);
-      setName(updated.name || "");
-      setPhone(updated.phone || "");
-      setGovernmentId(updated.governmentId || "");
+      setName(updated?.name || "");
+      setPhone(updated?.phone || "");
+      setGovernmentId(updated?.governmentId || "");
       setStatusMessage("Profile updated successfully.");
     } catch (error) {
       setStatusMessage(
@@ -76,22 +79,26 @@ export default function AccountPage() {
           <p className="mt-2">{user.name}</p>
           <p className="text-slate">{user.email}</p>
         </div>
+
         <div className="rounded-2xl border border-ink/10 bg-sand/60 p-4 text-sm">
           <p className="text-xs uppercase tracking-[0.3em] text-slate">Account</p>
           <p className="mt-2">{user.accountNo}</p>
           <p className="text-slate">Role: {user.role}</p>
         </div>
+
         <div className="rounded-2xl border border-ink/10 bg-sand/60 p-4 text-sm">
           <p className="text-xs uppercase tracking-[0.3em] text-slate">Balance</p>
           <p className="mt-2">{formatINR(user.balance)}</p>
           <p className="text-slate">Status: {user.status}</p>
         </div>
+
         <div className="rounded-2xl border border-ink/10 bg-sand/60 p-4 text-sm">
           <p className="text-xs uppercase tracking-[0.3em] text-slate">KYC</p>
           <p className="mt-2">Phone: {user.phone || "Not provided"}</p>
           <p className="text-slate">Gov ID: {user.governmentId || "Not provided"}</p>
         </div>
       </div>
+
       <form
         onSubmit={handleUpdate}
         className="mt-6 grid gap-4 rounded-2xl border border-ink/10 bg-white p-5 md:grid-cols-2"
@@ -99,34 +106,38 @@ export default function AccountPage() {
         <p className="md:col-span-2 text-xs uppercase tracking-[0.3em] text-slate">
           Update profile
         </p>
+
         <label className="text-sm text-slate">
           Full name
           <input
             type="text"
             value={name}
-            onChange={(event) => setName(event.target.value)}
+            onChange={(e) => setName(e.target.value)}
             className="mt-2 w-full rounded-xl border border-ink/10 bg-sand/50 px-4 py-3 text-sm"
             required
           />
         </label>
+
         <label className="text-sm text-slate">
           Phone
           <input
             type="tel"
             value={phone}
-            onChange={(event) => setPhone(event.target.value)}
+            onChange={(e) => setPhone(e.target.value)}
             className="mt-2 w-full rounded-xl border border-ink/10 bg-sand/50 px-4 py-3 text-sm"
           />
         </label>
+
         <label className="text-sm text-slate md:col-span-2">
           Government ID
           <input
             type="text"
             value={governmentId}
-            onChange={(event) => setGovernmentId(event.target.value)}
+            onChange={(e) => setGovernmentId(e.target.value)}
             className="mt-2 w-full rounded-xl border border-ink/10 bg-sand/50 px-4 py-3 text-sm"
           />
         </label>
+
         <div className="md:col-span-2 flex flex-wrap items-center gap-3">
           <button
             type="submit"
@@ -135,9 +146,10 @@ export default function AccountPage() {
           >
             {saving ? "Updating..." : "Update details"}
           </button>
-          {statusMessage ? (
+
+          {statusMessage && (
             <p className="text-sm text-slate">{statusMessage}</p>
-          ) : null}
+          )}
         </div>
       </form>
     </ProtectedRoute>
