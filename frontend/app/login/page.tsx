@@ -46,7 +46,7 @@ export default function LoginPage() {
     return "Google sign-in failed. Please try again.";
   })();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setError("");
     setLoading(true);
