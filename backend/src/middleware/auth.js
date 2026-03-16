@@ -12,7 +12,7 @@ const authRequired = (req, res, next) => {
       ? req.headers.authorization.replace("Bearer ", "")
       : null);
 
-  if (!token) {
+  if(!token){
     return res.status(401).json({ message: "Unauthorized" });
   }
 
