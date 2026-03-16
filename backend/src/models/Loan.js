@@ -24,5 +24,4 @@ const loanSchema = new Schema(
 );
 
 loanSchema.index({ accountNo: 1, createdAt: -1 });
-
 module.exports = model("Loan", loanSchema);
