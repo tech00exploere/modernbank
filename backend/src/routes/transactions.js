@@ -92,7 +92,6 @@ router.post("/", authRequired, async (req, res) => {
     status: "COMPLETED",
     meta: {},
   });
-
   return res.status(201).json({
     message: "Transaction completed",
     balance: Number(user.balance),
