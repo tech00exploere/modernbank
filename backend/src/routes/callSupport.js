@@ -6,7 +6,6 @@ const { generateSupportReply } = require("../support/aiEngine");
 
 const router = express.Router();
 const VoiceResponse = twilio.twiml.VoiceResponse;
-
 router.use(express.urlencoded({ extended: false }));
 
 router.post("/voice", async (req, res) => {
