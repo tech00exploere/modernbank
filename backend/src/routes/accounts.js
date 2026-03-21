@@ -49,7 +49,6 @@ router.put("/me", authRequired, async (req, res) => {
   if (Object.keys(updates).length === 0) {
     return res.status(400).json({ message: "No fields provided for update" });
   }
-
   const user = await User.findByIdAndUpdate(req.user.id, updates, {
     new: true,
   });
