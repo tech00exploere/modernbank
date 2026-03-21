@@ -45,7 +45,6 @@ router.put("/me", authRequired, async (req, res) => {
   if (governmentId !== undefined) {
     updates.governmentId = String(governmentId).trim();
   }
-
   if (Object.keys(updates).length === 0) {
     return res.status(400).json({ message: "No fields provided for update" });
   }
