@@ -27,7 +27,6 @@ const issueTokens = (user, req, res) => {
     maxAge: 8 * 60 * 60 * 1000,
   });
 };
-
 const generateAccountNo = () =>
   `AB-${Math.floor(1000 + Math.random() * 9000)}-${Math.floor(
     1000 + Math.random() * 9000
