@@ -30,5 +30,4 @@ const requireRole = (role) => (req, res, next) => {
   }
   return next();
 };
-
 module.exports = { authRequired, requireRole };
