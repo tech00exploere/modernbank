@@ -72,7 +72,6 @@ router.post("/dial", authRequired, async (req, res) => {
         "Missing Twilio configuration. Set TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, and PUBLIC_BASE_URL.",
     });
   }
-
   const client = twilio(sid, token);
   const call = await client.calls.create({
     to,
