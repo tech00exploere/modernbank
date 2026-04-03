@@ -5,5 +5,4 @@ const connectMongo = async () => {
   await mongoose.connect(uri, { serverSelectionTimeoutMS: 15000 });
   console.log(`MongoDB connected: ${mongoose.connection.host}`);
 };
-
 module.exports = { connectMongo, mongoose };
