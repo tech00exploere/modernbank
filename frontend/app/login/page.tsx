@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function LoginPage() {
+export default function LoginPage() { 
   const router = useRouter();
   const searchParams = useSearchParams();
 
