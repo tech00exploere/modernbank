@@ -6,7 +6,7 @@ const { makeRef, round2 } = require("../utils");
 
 const router = express.Router();
 
-const mapTransaction = (doc) => ({
+const mapTransaction = (doc) => ({ 
   _id: doc._id.toString(),
   id: doc._id.toString(),
   accountNo: doc.accountNo,
