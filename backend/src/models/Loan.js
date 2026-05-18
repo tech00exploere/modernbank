@@ -6,7 +6,7 @@ const loanSchema = new Schema(
     accountNo: { type: String, required: true, index: true },
     principalAmount: { type: Number, required: true, min: 1 },
     annualIncome: { type: Number, required: true, min: 0 },
-    tenureMonths: { type: Number, required: true, min: 1 },
+    tenureMonths: { type: Number, required: true, min: 1 }, 
     purpose: { type: String, default: "" },
     interestRateAnnual: { type: Number, required: true, min: 0 },
     monthlyEmi: { type: Number, required: true, min: 0 },
