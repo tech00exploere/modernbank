@@ -15,7 +15,5 @@ const transactionSchema = new Schema(
   },
   { timestamps: true }
 );
-
 transactionSchema.index({ accountNo: 1, createdAt: -1 });
-
 module.exports = model("Transaction", transactionSchema);
