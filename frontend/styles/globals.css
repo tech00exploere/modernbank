@@ -61,15 +61,12 @@ th {
 .bg-sand\/50 {
   background-color: rgba(255, 243, 214, 0.5) !important;
 }
-
 .bg-sand\/60 {
   background-color: rgba(255, 243, 214, 0.6) !important;
 }
-
 .bg-sand\/70 {
   background-color: rgba(255, 243, 214, 0.7) !important;
 }
-
 .border-r {
   border-right-color: rgba(30, 58, 138, 0.45) !important;
 }
