@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");//auth establishment
 
 const authRequired = (req, res, next) => {
   if (req.session && req.session.user) {
