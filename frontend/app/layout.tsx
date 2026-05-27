@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Modern Bank",
   description: "A modern bank management interface with role-based dashboards.",
 };
-
+  
 export default function RootLayout({
   children,
 }: {
