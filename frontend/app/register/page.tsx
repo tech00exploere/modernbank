@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function RegisterPage() {
   const router = useRouter();
   const [name, setName] = useState("");
-  const [email, setEmail] = useState(""); 
+  const [email, setEmail] = useState("");    
   const [phone, setPhone] = useState("");
   const [governmentId, setGovernmentId] = useState("");
   const [password, setPassword] = useState("");
