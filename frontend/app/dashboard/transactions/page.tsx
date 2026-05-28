@@ -10,7 +10,7 @@ export default function TransactionsPage() {
   const router = useRouter();
   const [transactions, setTransactions] = useState<TransactionRow[]>([]);
   const [page, setPage] = useState(1);
-  const [pages, setPages] = useState(1);
+  const [pages, setPages] = useState(1); 
   const [type, setType] = useState("");
   const [status, setStatus] = useState("");
   const [dateFrom, setDateFrom] = useState("");
