@@ -2,7 +2,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 
 const features = [
-  {
+  { 
     title: "Onboarding pipeline",
     body: "Register, upload KYC, and wait for admin verification. Accounts stay PENDING until approved.",
   },
