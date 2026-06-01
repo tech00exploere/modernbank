@@ -7,7 +7,7 @@ export type AccountUser = {
   phone?: string;
   governmentId?: string;
   role: "USER" | "ADMIN";
-  status: "PENDING" | "ACTIVE";
+  status: "PENDING" | "ACTIVE"; 
   accountNo: string;
   balance: number;
   createdAt?: string;
