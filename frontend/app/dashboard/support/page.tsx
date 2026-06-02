@@ -6,7 +6,7 @@ import ProtectedRoute from "../../../components/ProtectedRoute";
 type ChatMessage = {
   role: "user" | "assistant";
   content: string;
-};
+}; 
 
 type SpeechRecognitionLike = {
   continuous: boolean;
