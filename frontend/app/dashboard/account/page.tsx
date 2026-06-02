@@ -9,7 +9,7 @@ import { formatINR } from "../../../lib/utils";
 export default function AccountPage() {
   const router = useRouter();
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [governmentId, setGovernmentId] = useState("");
