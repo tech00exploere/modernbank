@@ -8,7 +8,7 @@ const inrFormatter = new Intl.NumberFormat("en-IN", {
 export function maskAccount(account: string) {
   const parts = account.split("-");
 
-  if (parts.length !== 3) {
+  if (parts.length !== 3) { 
     return account;
   }
 
