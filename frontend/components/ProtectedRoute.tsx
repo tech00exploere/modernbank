@@ -7,7 +7,7 @@ type ProtectedRouteProps = {
 export default function ProtectedRoute({
   title,
   description,
-  children,
+  children, 
 }: ProtectedRouteProps) { 
   return (
     <section className="rounded-3xl border border-ink/10 bg-white p-6 shadow-card">
