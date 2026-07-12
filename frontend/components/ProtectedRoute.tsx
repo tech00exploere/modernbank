@@ -18,6 +18,6 @@ export default function ProtectedRoute({
         <p className="mt-2 text-sm text-slate">{description}</p>
       </div>
       {children}
-    </section>
+    </section> 
   );
 }
