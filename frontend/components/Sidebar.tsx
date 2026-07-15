@@ -7,7 +7,7 @@ import { getMe } from "../lib/api";
 
 const baseItems = [ 
   { label: "Overview", href: "/dashboard" },
-  { label: "Account", href: "/dashboard/account" },
+  { label: "Account", href: "/dashboard/account" }, 
   { label: "Transfer", href: "/dashboard/transfer" },
   { label: "Transactions", href: "/dashboard/transactions" },
   { label: "Loan", href: "/dashboard/loan" },
