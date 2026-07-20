@@ -4,7 +4,7 @@ type ProtectedRouteProps = {
   children: React.ReactNode;
 }; 
 //checking protected route 
-
+ 
 export default function ProtectedRoute({
   title,
   description,
