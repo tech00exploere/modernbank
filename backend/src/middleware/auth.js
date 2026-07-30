@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");//auth establishment
 
 const authRequired = (req, res, next) => {
-  if (req.session && req.session.user) {
+  if (req.session && req.session.user){
     req.user = req.session.user;
     return next();
   }
