@@ -9,7 +9,7 @@ const transactionSchema = new Schema(
     currency: { type: String, default: "INR" },
     counterpartyAccount: { type: String, default: "" },
     amount: { type: Number, required: true, min: 0 },
-    balanceAfter: { type: Number, required: true, min: 0 },
+    balanceAfter: { type: Number, required: true, min: 0 }, 
     status: { type: String, enum: ["PENDING", "COMPLETED", "FAILED"], default: "COMPLETED" },
     meta: { type: Schema.Types.Mixed, default: {} }
   },
